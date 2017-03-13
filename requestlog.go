@@ -50,7 +50,6 @@ func (r *responseLogger) Size() int {
 //	2017/03/13 14:20:57 [dc6efe7f-cfe7-418c-baa3-7c0f80334572] Started GET /goodbye for [192.168.0.10]:62966
 //	2017/03/13 14:20:57 Running goodbye handler
 //	2017/03/13 14:20:57 [dc6efe7f-cfe7-418c-baa3-7c0f80334572] Completed 200 OK in 237.884µs
-
 func RequestLogHandler(h http.Handler, out *log.Logger) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		start := time.Now()
