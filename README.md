@@ -7,7 +7,7 @@ Request logging middleware for Go. Requestlog wraps any handler with start and e
 
 `RequestLogHandler` uses a `log.Logger` for output. If the default `log.Logger` is in use, calling `RequestLogDefaultHandler` will use the same configuration as the default logger.
 
-# Example
+# Usage Example
 
 ```go
 
@@ -45,4 +45,14 @@ func main() {
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
 
+```
+
+# Output Examples
+
+Log output with `X-Request-ID` set:
+
+```
+2017/03/13 14:20:57 [dc6efe7f-cfe7-418c-baa3-7c0f80334572] Started GET /goodbye for [192.168.0.10]:62966
+2017/03/13 14:20:57 Running goodbye handler
+2017/03/13 14:20:57 [dc6efe7f-cfe7-418c-baa3-7c0f80334572] Completed 200 OK in 237.884µs
 ```
